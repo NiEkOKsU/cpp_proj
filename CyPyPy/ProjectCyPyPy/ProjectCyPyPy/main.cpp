@@ -317,7 +317,7 @@ int main(void)
                 dx = 0.004f * pow(-1.0, rand() % 2);
                 dy = ((rand() % 1000) - 500) / 100000.0;
             }
-            if (scores[0] == 1 || scores[1] == 1) {
+            if (scores[0] == 5 || scores[1] == 5) {
                 win = true;
             }
         }
