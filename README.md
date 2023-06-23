@@ -5,7 +5,7 @@
 - SDL2_mixer
 # Działanie aplikacji oraz zasady gry
 Aplikację uruchamiamy poprzez włączenie pliku z rozszerzeniem vcxproj.
-Gra 2 użytkowników na 1 klawiaturze. Sterowanie paletką lewą w - góra, s- dół. Do sterowania paletką prawą wykorzystuje się strzałki.
+Gra 2 użytkowników na 1 klawiaturze. Sterowanie paletką lewą w - góra, s- dół. Do sterowania paletką prawą wykorzystuje się strzałki. Grę resetuje się przyciskiem r.
 Gra rozpoczyna się w momencie uruchomienia aplikacji, 
 piłka na początku gry oraz po zdobytym punkcie zaczyna od środka swój ruch w stronę dowolnego zawodnika. 
 Gra kończy się w momencie zdobycia 5 punktów przez któregoś z graczy. Po zakończeniu gry wyświetla się informacja kto wygrał.
