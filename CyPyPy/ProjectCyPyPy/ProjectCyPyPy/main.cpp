@@ -89,9 +89,6 @@ glEnd()
 
 
 
-
-
-
 typedef struct Players {
     float p1;
     float p2;
@@ -165,6 +162,8 @@ void quitMixer() {
 }
 Players players = { 0.0f,0.0f };
 float palettesize = 0.1f;
+bool win = false;
+int scores[2] = { 0,0 };
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
     if (key == GLFW_KEY_W && (action == GLFW_REPEAT || action == GLFW_PRESS) && (players.p1 + palettesize <= 1)) {
@@ -179,6 +178,12 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if (key == GLFW_KEY_DOWN && (action == GLFW_REPEAT || action == GLFW_PRESS) && (players.p2 - palettesize >= -1)) {
         players.p2 -= 0.04;
     }
+    if (key == GLFW_KEY_R && action == GLFW_PRESS && win) {
+        scores[0] = 0;
+        scores[1] = 0;
+        win = false;
+    }
+
 }
 
 void drawScores(const int scores[2])
@@ -201,6 +206,8 @@ void drawScores(const int scores[2])
     case 5: Draw5(0.45f, 0.6f); break;
     }
 }
+
+
 int main(void)
 {
     initMixer();
@@ -239,8 +246,8 @@ int main(void)
     int sound = loadSound("../res/audio/anime.wav");
     playMusic(song);
     int bounces = 0;
-    int scores[2] = { 0,0 };
-    bool win = false;
+    
+   
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
@@ -293,7 +300,7 @@ int main(void)
                 dy = ((rand() % 10) - 5.0) / 1000.0;
                 bounces++;
             }
-            if (bounces == 10)
+            if (bounces == 2)
             {
                 dx *= 2.0;
                 bounces = 0;
